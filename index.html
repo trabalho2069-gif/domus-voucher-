@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOMUS | Voucher Institucional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b5c7d">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <style>
+    * { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #e9edf1, #f7f9fb);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone {
+      width: 360px;
+      background: #fff;
+      border-radius: 28px;
+      padding: 28px 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      color: #0b5c7d;
+      font-size: 34px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      font-size: 13px;
+      color: #6b7c85;
+    }
+
+    .voucher {
+      border: 2px solid #0b5c7d;
+      border-radius: 18px;
+      padding: 22px 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .voucher h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #0b5c7d;
+      letter-spacing: 0.5px;
+    }
+
+    .discount {
+      background: #0b5c7d;
+      color: #fff;
+      font-size: 26px;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .voucher p {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .code {
+      margin: 18px auto;
+      padding: 12px;
+      border: 2px dashed #0b5c7d;
+      border-radius: 12px;
+      width: fit-content;
+      font-weight: bold;
+      color: #0b5c7d;
+      letter-spacing: 1px;
+    }
+
+    .cta {
+      display: block;
+      margin-top: 18px;
+      background: #0b5c7d;
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 18px;
+      font-size: 11px;
+      text-align: center;
+      color: #666;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="phone">
+
+    <div class="logo">
+      <h1>DOMUS</h1>
+      <span>Soluções Imobiliárias</span>
+    </div>
+
+    <div class="voucher">
+      <h2>VOUCHER INSTITUCIONAL</h2>
+      <div class="discount">5% DE DESCONTO</div>
+      <p>
+        Condição especial para parceiros, fornecedores e clientes
+        no início das operações da DOMUS.
+      </p>
+    </div>
+
+    <div class="code">CÓDIGO: ABERTURA-DOMUS</div>
+
+    <a
+      class="cta"
+      href="https://wa.me/5519999999999?text=Olá!%20Conheci%20a%20DOMUS%20e%20gostaria%20de%20conversar%20sobre%20parceria."
+      target="_blank"
+    >
+      Falar com a DOMUS no WhatsApp
+    </a>
+
+    <div class="footer">
+      Voucher digital institucional.<br>
+      Limeira – SP
+    </div>
+
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+
+</body>
+</html>
