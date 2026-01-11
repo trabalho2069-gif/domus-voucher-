@@ -2,13 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>DOMUS | Voucher Institucional</title>
+  <title>DOMUS | Voucher Parcerias</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0b5c7d">
-  <link rel="apple-touch-icon" href="icon-192.png">
 
   <style>
     * { box-sizing: border-box; font-family: Arial, sans-serif; }
@@ -121,37 +120,56 @@
     </div>
 
     <div class="voucher">
-      <h2>VOUCHER INSTITUCIONAL</h2>
+      <h2>VOUCHER PARCERIA DOMUS</h2>
       <div class="discount">5% DE DESCONTO</div>
       <p>
         Condição especial para parceiros, fornecedores e clientes
-        no início das operações da DOMUS.
+        indicados no início das operações da DOMUS.
       </p>
     </div>
 
-    <div class="code">CÓDIGO: ABERTURA-DOMUS</div>
+    <div id="voucherCode" class="code"></div>
 
-    <a
-      class="cta"
-      href="https://wa.me/5519998918427?text=Olá!%20Conheci%20a%20DOMUS%20e%20gostaria%20de%20conversar%20sobre%20parceria."
-      target="_blank"
-    >
+    <a id="whatsappBtn" class="cta" target="_blank">
       Falar com a DOMUS no WhatsApp
     </a>
 
     <div class="footer">
-      Voucher digital institucional.<br>
+      Voucher digital rastreável por código de parceria.<br>
       Limeira – SP
     </div>
 
   </div>
 
   <script>
+    // Lê o código da URL
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref') || 'INSTITUCIONAL';
+
+    const codigo = 'PARCEIRO-' + ref.toUpperCase();
+
+    // Exibe o código
+    document.getElementById('voucherCode').innerText =
+      'CÓDIGO: ' + codigo;
+
+    // Gera WhatsApp dinâmico
+    const mensagem = encodeURIComponent(
+      'Olá! Estou utilizando o voucher DOMUS – Código ' + codigo +
+      ' e gostaria de conversar.'
+    );
+
+    const telefone = '551999891847; // ALTERE AQUI
+    const whatsappLink = `https://wa.me/${telefone}?text=${mensagem}`;
+
+    document.getElementById('whatsappBtn').href = whatsappLink;
+
+    // Service Worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
   </script>
 
 </body>
-
 </html>
+</html>
+
